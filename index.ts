@@ -11,7 +11,7 @@ const app = express()
 // Declare routes that people can visit on the application
 
 // White Page
-app.get('/', function (req: Request, res: Response) {
+app.get('/', function (req: Request, res: Response): void {
     res.send(`
         <body style="margin: 0;">
             <div style="border: 1px solid black; height: 10vh; background-color: white;">
@@ -24,8 +24,8 @@ app.get('/', function (req: Request, res: Response) {
 
 
 // Color Page
-app.get('/:color', function (req: Request, res: Response) {
-    let myColor = req.params.color
+app.get('/:color', function (req: Request, res: Response): void{
+    let myColor: string = req.params.color
     res.send(`
         <body style="margin: 0;">
             <div style="border: 1px solid black; height: 10vh; background-color: ${myColor};">
